@@ -112,11 +112,46 @@ async authorize () {
 You can also use the middlewares `is` and `can` in your routes.
 
 ```js
-Route.get('/admin/posts', 'Admin/PostController.index')
+Route.get('/posts', 'PostController.index')
   .middleware(['auth', 'is:Admin'])
 
-Route.get('/admin/posts', 'Admin/PostController.show')
-  .middleware(['auth', 'can:showPost'])
+Route.put('/posts/:id', 'PostController.update')
+  .middleware(['auth', 'can:updatePost'])
+```
+
+You can also use AdonisJs resources:
+
+```js
+Route.resource('posts', 'PostController')
+  .only(['index', 'show', 'store', 'update', 'destroy']) // .apiOnly()
+  .middleware(new Map([
+    [['store', 'update', 'destroy'], ['auth']],
+    [['store'], ['can:storePost']],
+    [['update'], ['can:updatePost']],
+    [['destroy'], ['can:destroyPost']]
+  ]))
+  .validator(new Map([
+    [['store'], ['StorePost']],
+    [['update'], ['UpdatePost']]
+  ]))
+```
+
+### Config
+
+In order to configure how the `can` middleware will process the route context (like in validators or controllers) you can define functions in `config/acl.js`:
+
+```js
+module.exports = {
+  updatePost: ({ params }) => ({ post: params.id }),
+  destroyPost: ({ params }) => ({ post: params.id }),
+  storePost: ({ params, request }) => {
+    const { type } = request.post()
+
+    return {
+      type
+    }
+  }
+}
 ```
 
 ### API
