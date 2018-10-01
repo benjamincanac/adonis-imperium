@@ -25,7 +25,7 @@ Use `Imperium.role('...', (ctx) => {})` to create a role.
 The function will be used to determine if your user has the role (it can be `asynchronous` by returning a `Promise`).
 
 For example, you can get your user from your database and return:
-  
+
 - a `Boolean` (`true` if user has the corresponding role, otherwise `false`)
 - an `Object` to compare against route actions
 - an `Array` of objects
@@ -77,7 +77,7 @@ async show ({ imperium, params }) {
   const post = await Post.find(params.id)
 
   const can = await imperium.can('showPost', { post: params.id })
-  
+
   if (!can) {
     // abort 401
   }

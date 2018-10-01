@@ -1,0 +1,20 @@
+{
+  "name": "adonis-imperium",
+  "version": "0.0.1",
+  "description": "This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmty/adonis-imperium.git"
+  },
+  "scripts": {
+    "lint": "standard src/**",
+    "preversion": "npm run lint"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "imperium": "3.0.0"
+  },
+  "devDependencies": {
+    "standard": "12.0.1"
+  }
+}
