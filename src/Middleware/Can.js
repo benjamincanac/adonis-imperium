@@ -1,7 +1,5 @@
 'use strict'
 
-/* global use */
-
 const AuthorizationException = require('../Exceptions')
 
 const Config = use('Config')
