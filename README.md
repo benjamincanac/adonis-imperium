@@ -165,3 +165,7 @@ imperium.cannot('Action', resource)
 imperium.is('Role')
 imperium.isnot('Role')
 ```
+
+## License
+
+[MIT](https://github.com/cmty/adonis-algoliasearch/blob/master/LICENSE.md)
