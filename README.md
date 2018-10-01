@@ -5,6 +5,10 @@
 [![npm version](https://img.shields.io/npm/v/adonis-imperium.svg)](https://www.npmjs.com/package/adonis-imperium)
 [![license](https://img.shields.io/github/license/adonis-imperium/imperium.svg)](https://github.com/cmty/adonis-imperium/blob/master/LICENSE.md)
 
+## Documentation
+
+[http://imperium.dimerapp.com/docs/master/adonisjs](http://imperium.dimerapp.com/docs/master/adonisjs)
+
 ## Getting Started
 
 Install the package using the `adonis` CLI.
