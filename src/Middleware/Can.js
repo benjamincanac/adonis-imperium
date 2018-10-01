@@ -1,5 +1,7 @@
 'use strict'
 
+/* global use */
+
 const AuthorizationException = require('../Exceptions')
 
 const Config = use('Config')
@@ -12,7 +14,7 @@ class Can {
 
     if (actionParamsResolver) actionParams = actionParamsResolver({ params, request })
 
-    if (await imperium.cannot(action, actionParams)) throw AuthorizationException.invoke('Unauthorized', 401, 'E_UNAUTHORIZED')
+    if (await imperium.cannot(action, actionParams)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
 
     await next()
   }

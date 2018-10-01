@@ -1,5 +1,7 @@
 'use strict'
 
+/* global use */
+
 const Imperium = use('Imperium')
 
 class ImperiumInit {

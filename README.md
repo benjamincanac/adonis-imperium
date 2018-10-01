@@ -1,6 +1,6 @@
-# Adonis Imperium 🦅
+# Adonis Imperium
 
-This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium).
+This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium) and inspired by [adonis-guard](https://github.com/RomainLanz/adonis-guard).
 
 ## Getting Started
 
@@ -35,6 +35,12 @@ const Imperium = use('Imperium')
 
 Imperium.role('Admin', ({ auth }) => {
   return auth.user.role === 'admin'
+})
+
+Imperium.role('Moderator', async () => {
+  const posts = await Post.query().fetch()
+
+  return posts.toJSON().map((post) => ({ post: post.id }))
 })
 
 Imperium.role('User', async ({ auth }) => {
@@ -113,7 +119,7 @@ Route.get('/admin/posts', 'Admin/PostController.show')
   .middleware(['auth', 'can:showPost'])
 ```
 
-**Public API**
+### API
 
 ```js
 imperium.can('Action', resource)
