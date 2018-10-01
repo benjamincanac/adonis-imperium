@@ -1,6 +1,6 @@
 # Adonis Imperium
 
-This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium) and inspired by [adonis-guard](https://github.com/RomainLanz/adonis-guard).
+> This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium) and inspired by [adonis-guard](https://github.com/RomainLanz/adonis-guard).
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ Install the package using the `adonis` CLI.
 > adonis install adonis-imperium
 ```
 
-Follow instruction that are displayed ([or read them here](https://github.com/cmty/adonis-imperium/blob/master/instructions.md)).
+Follow instructions that are displayed ([or read them here](https://github.com/cmty/adonis-imperium/blob/master/instructions.md)).
 
 ## Defining your authorization
 
