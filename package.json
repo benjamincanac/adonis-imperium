@@ -1,6 +1,6 @@
 {
   "name": "adonis-imperium",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium).",
   "repository": {
     "type": "git",
