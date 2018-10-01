@@ -40,8 +40,10 @@ Imperium.role('Admin', ({ auth }) => {
   return auth.user.role === 'admin'
 })
 
-Imperium.role('Moderator', async () => {
-  const posts = await Post.query().fetch()
+Imperium.role('Author', async ({ auth }) => {
+  const posts = await Post.query()
+    .where('author_id', auth.user.id)
+    .fetch()
 
   return posts.toJSON().map((post) => ({ post: post.id }))
 })
