@@ -1,6 +1,6 @@
 # Adonis Imperium
 
-> This package is an **authorization provider** built on top of [imperium](https://github.com/mono-js/imperium) and inspired by [adonis-guard](https://github.com/RomainLanz/adonis-guard).
+> This package is an **authorization provider** built on top of [Imperium](https://github.com/cmty/imperium) and inspired by [adonis-guard](https://github.com/RomainLanz/adonis-guard).
 
 [![npm version](https://img.shields.io/npm/v/adonis-imperium.svg)](https://www.npmjs.com/package/adonis-imperium)
 [![license](https://img.shields.io/github/license/adonis-imperium/imperium.svg)](https://github.com/cmty/adonis-imperium/blob/master/LICENSE.md)
