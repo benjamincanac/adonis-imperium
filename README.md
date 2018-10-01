@@ -168,4 +168,4 @@ imperium.isnot('Role')
 
 ## License
 
-[MIT](https://github.com/cmty/adonis-algoliasearch/blob/master/LICENSE.md)
+[MIT](https://github.com/cmty/adonis-imperium/blob/master/LICENSE.md)
