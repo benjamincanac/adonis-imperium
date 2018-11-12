@@ -9,6 +9,13 @@ class ImperiumInit {
 
     await next()
   }
+
+  async wsHandle (ctx, next) {
+    // Add imperium in the context
+    ctx.imperium = Imperium.door(ctx)
+
+    await next()
+  }
 }
 
 module.exports = ImperiumInit

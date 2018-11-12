@@ -10,9 +10,15 @@ class Can {
     // https://github.com/adonisjs/adonis-framework/issues/230#issuecomment-237004946
     const actionParamsResolver = Config.get(`acl.${action}`)
 
-    if (actionParamsResolver) actionParams = actionParamsResolver({ params, request })
+    if (actionParamsResolver) actionParams = await actionParamsResolver({ params, request })
 
     if (await imperium.cannot(action, actionParams)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
+
+    await next()
+  }
+
+  async wsHandle ({ imperium }, next, [action]) {
+    if (await imperium.cannot(action)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
 
     await next()
   }
