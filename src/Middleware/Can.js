@@ -12,13 +12,13 @@ class Can {
 
     if (actionParamsResolver) actionParams = await actionParamsResolver({ params, request })
 
-    if (await imperium.cannot(action, actionParams)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
+    if (await imperium.cannot(action, actionParams)) throw new AuthorizationException('Unauthorized', 403, 'E_UNAUTHORIZED')
 
     await next()
   }
 
   async wsHandle ({ imperium }, next, [action]) {
-    if (await imperium.cannot(action)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
+    if (await imperium.cannot(action)) throw new AuthorizationException('Unauthorized', 403, 'E_UNAUTHORIZED')
 
     await next()
   }

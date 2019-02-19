@@ -4,13 +4,13 @@ const AuthorizationException = require('../Exceptions')
 
 class Is {
   async handle ({ imperium }, next, [role]) {
-    if (await imperium.isnot(role)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
+    if (await imperium.isnot(role)) throw new AuthorizationException('Unauthorized', 403, 'E_UNAUTHORIZED')
 
     await next()
   }
 
   async wsHandle ({ imperium }, next, [role]) {
-    if (await imperium.isnot(role)) throw new AuthorizationException('Unauthorized', 401, 'E_UNAUTHORIZED')
+    if (await imperium.isnot(role)) throw new AuthorizationException('Unauthorized', 403, 'E_UNAUTHORIZED')
 
     await next()
   }
